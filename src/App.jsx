@@ -8,7 +8,7 @@ const App = () => {
   const [error, setError] = useState(null)
   const [success, setSuccess] = useState(false)
 
-  const API_URL = 'http://localhost:4000/api/transcribe'
+  const API_URL = 'https://youtubetranscribeserver-1.onrender.com/api/transcribe'
 
   const isValidYoutubeUrl = (url) => {
     const regex = /^https:\/\/(www\.)?youtube\.com\/watch\?v=([a-zA-Z0-9_-]+)$/;
@@ -84,10 +84,7 @@ const App = () => {
          disabled={isLoading || !youtubeUrl.trim()}
          >
           {isLoading ?
-          <>
-          <LuLoader className='w-5 h-5 animate-spin' />
-          transcribing...
-          </>
+          "transcribing..."
           :  "Transcribe"
         }
         </button>
